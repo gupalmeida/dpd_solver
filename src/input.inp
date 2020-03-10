@@ -1,0 +1,17 @@
+################################################################
+###################### INPUT PARAMETERS ########################
+################################################################
+This file provides a way of setting simulation parameters for
+running a DPD simulation. The parameters are given in the
+following format
+
+@varname
+value
+* any desired remark
+
+Note that it is important to keep such structure for correct
+reading of the parameter by the main program.
+################################################################
+@n
+200
+* number of dissipative particles in the domain
