@@ -12,6 +12,12 @@ value
 Note that it is important to keep such structure for correct
 reading of the parameter by the main program.
 ################################################################
+################################################################
+@runcaseID
+dpd_0001_cavity
+* unique ID tag for each runcase - any tag accepted
+################################################################
 @n
 200
 * number of dissipative particles in the domain
+################################################################

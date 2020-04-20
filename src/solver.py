@@ -1,9 +1,10 @@
 import numpy as np
-from IOtools import *
+import IOtools as io
 
 def main():
-    n = getValue("n")
-    print(n)
+    n = io.getValue('n')
+    caseId = io.getValue('runcaseID',dtype='str')
+    io.writeToParaview(caseId)
 
 if __name__== "__main__":
     main()

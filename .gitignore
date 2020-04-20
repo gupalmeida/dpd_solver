@@ -1,2 +1,5 @@
 __pycache__/
-*.swg
+*.swp
+*.csv
+*.dat
+*.out

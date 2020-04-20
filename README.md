@@ -1,5 +1,5 @@
 # DISSIPATIVE PARTICLE DYNAMICS
-Repository with Dissipative Prticle Dynamics solver and features.
+Repository with Dissipative Prticle Dynamics solver and features. Source code and features implemented using Python 3.6.9.
 
 ## Introduction
 The DPD method is a particle-based numerical method derived from the Molecular Dynamics, in which the interaction between particles is computed from conservative, dissipative and random forces acting on each particle.
