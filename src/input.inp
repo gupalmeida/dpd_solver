@@ -14,10 +14,18 @@ reading of the parameter by the main program.
 ################################################################
 ################################################################
 @runcaseID
-dpd_0001_cavity
+0001-dpd-cavity
 * unique ID tag for each runcase - any tag accepted
 ################################################################
 @n
 200
 * number of dissipative particles in the domain
+################################################################
+@dp
+1
+* particle diameter
+################################################################
+@r_cutoff
+1
+* cutoff radius for interaction between particles
 ################################################################
