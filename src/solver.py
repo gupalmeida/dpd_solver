@@ -9,7 +9,7 @@ def main():
     n = io.getValue('n')
     caseId = io.getValue('runcaseID',dtype='str')
     msh = pre.mesh()
-    data = msh.genStrcdBlock()
+    data = msh.genStrcdBlock(nx=40,ny=40)
     io.exportFields(caseId,solution=data,varList=[])
 
 if __name__== "__main__":
