@@ -1,0 +1,38 @@
+################################################################
+###################### MESH PARAMETERS ######################## ################################################################
+This file provides a way of setting meshing parameters for
+creating the computational domain. The parameters are given in the
+following format
+
+@varname
+value
+* any desired remark
+
+Note that it is important to keep such structure for correct
+reading of the parameter by the main program.
+################################################################
+################################################################
+@writeMesh
+0
+* [1] - writes mesh file, [0] - does not write mesh file
+################################################################
+@meshAction
+create
+* identifies whether the mesh will be created or read
+################################################################
+@meshType
+structured
+* identifies whether the mesh is structured or unstructured
+################################################################
+@nx
+30
+* number of nodes in x direction
+################################################################
+@ny
+80
+* number of nodes in y direction
+################################################################
+@nz
+1
+* number of nodes in z direction
+################################################################

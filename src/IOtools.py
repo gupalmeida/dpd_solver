@@ -2,10 +2,10 @@ import os
 import sys
 import numpy as np
 
-def getValue(varname,dtype='int'):
-    """ This method gets value of a given variable from input file. Variable name is given as string and the method returns numerical value according to dtype argument given by user. dtype argument must be passed as string and its default value is 'int'."""
+def getValue(varname,filename='input.inp',dtype='int'):
+    """ Gets value of a given variable from input file. Variable name is given as string and the method returns numerical value according to dtype argument given by user. dtype argument must be passed as string and its default value is 'int'."""
     # defining input file path and file name
-    fp = os.getcwd() + "/input.inp"
+    fp = os.getcwd() + '/' + filename
     f = open(fp,'r')
     value = ""
 
@@ -27,10 +27,12 @@ def getValue(varname,dtype='int'):
     return eval(cmd)
 
 def exportFields(cname,solution=None,timeStep=None,varList=list()):
-    """ This method writes output file in dat format for visualizing data in ParaView or Tecplot. For temporal analysis the parameter 'timeStep' should be provided. Also, a list of variable names may be provided in order to allow the method to write their respective values."""
+    """ Writes output file in dat format for visualizing data in ParaView or Tecplot. For temporal analysis the parameter 'timeStep' should be provided. Also, a list of variable names may be provided in order to allow the method to write their respective values."""
 
     if solution is not None:
         # GETTING COORDINATE VECTORS FROM SOLUTION
+        # solution tuple is given in the following order
+        # (n_dim, x_coord, y_coord, z_coord, solution_variables)
         x = solution[0]
         y = solution[1]
         z = solution[2]
@@ -56,8 +58,11 @@ def exportFields(cname,solution=None,timeStep=None,varList=list()):
         # WRITING SOLUTION
         # mapping variables into strings for writing
         data = np.array([arr.astype(str) for arr in solution])
-        for j in range(len(y)):
-            for i in range(len(x)):
+
+        # getting number of cells in each direction
+        _i,_j,_k = np.shape(solution[0])
+        for j in range(_j):
+            for i in range(_i):
                 x_ = data[0]
                 y_ = data[1]
                 z_ = data[2]
