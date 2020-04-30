@@ -22,6 +22,8 @@ def getValue(varname,filename='input.inp',dtype='int'):
         print("Error to get variable value from input file.")
 
     f.close()
+    if dtype == 'bool':
+        value = value.lower() in ['true','1','y','yes']
     cmd = dtype + '(value)'
     #print(cmd) # debug print
     return eval(cmd)
@@ -61,12 +63,13 @@ def exportFields(cname,solution=None,timeStep=None,varList=list()):
 
         # getting number of cells in each direction
         _i,_j,_k = np.shape(solution[0])
-        for j in range(_j):
-            for i in range(_i):
-                x_ = data[0]
-                y_ = data[1]
-                z_ = data[2]
-                f.write(" ".join([x_[i,j,0],y_[i,j,0],z_[i,j,0]])+"\n")
+        for k in range(_k):
+            for j in range(_j):
+                for i in range(_i):
+                    x_ = data[0]
+                    y_ = data[1]
+                    z_ = data[2]
+                    f.write(" ".join([x_[i,j,k],y_[i,j,k],z_[i,j,k]])+"\n")
 
 
         # CLOSING OUTPUT FILE

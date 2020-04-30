@@ -14,6 +14,7 @@ def main():
     meshTools = pre.mesh()
     msh = meshTools.createMesh()
     solution = fvm(msh)
+    solution.solve()
     #io.exportFields(caseId,solution=data,varList=[])
 
 if __name__== "__main__":
