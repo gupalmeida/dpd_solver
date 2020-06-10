@@ -13,8 +13,12 @@ reading of the parameter by the main program.
 ################################################################
 ################################################################
 @writeMesh
-1
+0
 * [1] - writes mesh file, [0] - does not write mesh file
+################################################################
+@writeNodeData
+0
+* [1] - writes nodes files, [0] - does not write nodes file
 ################################################################
 @meshAction
 create
@@ -29,10 +33,10 @@ structured
 * number of nodes in x direction
 ################################################################
 @ny
-80
+9
 * number of nodes in y direction
 ################################################################
 @nz
-1
+9
 * number of nodes in z direction
 ################################################################

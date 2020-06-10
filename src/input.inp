@@ -17,7 +17,15 @@ reading of the parameter by the main program.
 0001-dpd-cavity
 * unique ID tag for each runcase - any tag accepted
 ################################################################
-@n
+@simType
+1
+* define simulation type - 1-fvm or 2-dpd
+################################################################
+@nDim
+1
+* define whether the simulations are 1-D, 2-D or 3-D
+################################################################
+@np
 200
 * number of dissipative particles in the domain
 ################################################################
@@ -28,4 +36,36 @@ reading of the parameter by the main program.
 @r_cutoff
 1
 * cutoff radius for interaction between particles
+################################################################
+
+################################################################
+####################### MESH PARAMETERS ########################
+################################################################
+This section provides a way of setting meshing parameters for
+creating a fvm computational domain.
+################################################################
+################################################################
+@writeMesh
+0
+* [1] - writes mesh file, [0] - does not write mesh file
+################################################################
+@meshAction
+create
+* identifies whether the mesh will be created or read
+################################################################
+@meshType
+structured
+* identifies whether the mesh is structured or unstructured
+################################################################
+@nx
+30
+* number of nodes in x direction
+################################################################
+@ny
+9
+* number of nodes in y direction
+################################################################
+@nz
+9
+* number of nodes in z direction
 ################################################################

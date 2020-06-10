@@ -61,7 +61,7 @@ def exportFields(cname,solution=None,timeStep=None,varList=list()):
         # mapping variables into strings for writing
         data = np.array([arr.astype(str) for arr in solution])
 
-        # getting number of cells in each direction
+        # getting number of nodes in each direction
         _i,_j,_k = np.shape(solution[0])
         for k in range(_k):
             for j in range(_j):
@@ -79,4 +79,27 @@ def exportFields(cname,solution=None,timeStep=None,varList=list()):
 
 def write_csv(cname,solution,sep=','):
     """ Simply exports your data to a csv file using any desired separator. No header should be specified. """
+        
+    # OPENING FILE FOR WRITING
+    fp = os.getcwd() + '/' + cname + '.dat'
+    f = open(fp,'w')
+
+    ### TODO - Implement columnwise file writer
+    f.close()
     return None
+
+def write_to_file(cname,data):
+    """ Simply writes an array to a file. """
+
+    # OPENING FILE FOR WRITING
+    fp = os.getcwd() + '/' + cname + '.dat'
+    f = open(fp,'w')
+
+    for value in data:
+        f.write(str(value))
+
+    f.close()
+
+def clear_data():
+    """ Clears all data related to previous simulations. """
+    pass
